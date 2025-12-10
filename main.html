@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saraswati Public School</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Variables for Color Scheme */
+        :root {
+            --color1: rgb(215, 192, 151); /* Light beige */
+            --color2: rgb(231, 222, 175); /* Pale yellow */
+            --color3: rgb(115, 175, 111); /* Medium green */
+            --color4: rgb(0, 126, 110); /* Dark teal */
+            --color4-light: rgba(0, 126, 110, 0.9);
+            --text-dark: #333;
+            --text-light: #fff;
+        }
+
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        h1, h2, h3, h4 {
+            margin-bottom: 20px;
+            color: var(--color4);
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background-color: var(--color3);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            background-color: var(--color4);
+            transform: translateY(-2px);
+        }
+
+        /* Enhanced Header Styles */
+        header {
+            background-color: var(--color4-light);
+            color: white;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            backdrop-filter: blur(5px);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-img-container {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 3px solid var(--color2);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .logo-tagline {
+            font-size: 0.8rem;
+            color: var(--color2);
+            font-style: italic;
+            margin-top: -5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 5px;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--color2);
+            transform: translateY(-2px);
+        }
+
+        nav ul li a i {
+            font-size: 0.9rem;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .mobile-menu:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Hero Section with Carousel */
+        .hero {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .carousel {
+            position: relative;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+        }
+
+        .carousel-slide::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .carousel-content {
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            z-index: 2;
+            max-width: 800px;
+            width: 90%;
+        }
+
+        .carousel-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .carousel-content p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .carousel-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            margin: 0 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .carousel-dot.active {
+            background-color: white;
+            transform: scale(1.2);
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--color2);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Fraternity Section */
+        .fraternity {
+            background-color: white;
+        }
+
+        .fraternity-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .fraternity-item {
+            background-color: var(--color1);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+
+        .fraternity-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .fraternity-icon {
+            font-size: 3rem;
+            color: var(--color4);
+            margin-bottom: 20px;
+        }
+
+        /* Leadership Section */
+        .leadership {
+            background-color: var(--color2);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--color3);
+        }
+
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .leadership-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .leadership-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .leadership-image {
+            height: 250px;
+            background-color: var(--color1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color4);
+            font-size: 4rem;
+        }
+
+        .leadership-info {
+            padding: 20px;
+        }
+
+        .leadership-info h3 {
+            margin-bottom: 5px;
+        }
+
+        .leadership-info p {
+            color: var(--color4);
+            font-weight: 500;
+        }
+
+        /* Staff Section */
+        .staff {
+            background-color: white;
+        }
+
+        .staff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .staff-card {
+            background-color: var(--color2);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .staff-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .staff-image {
+            height: 250px;
+            background-color: var(--color1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color4);
+            font-size: 4rem;
+        }
+
+        .staff-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .staff-info h3 {
+            margin-bottom: 5px;
+        }
+
+        .staff-info p {
+            color: var(--color4);
+            font-weight: 500;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background-color: var(--color2);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            height: 200px;
+            background-color: var(--color1);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Coaching Section */
+        .coaching {
+            background-color: white;
+        }
+
+        .coaching-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .coaching-card {
+            background-color: var(--color2);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .coaching-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .coaching-icon {
+            height: 80px;
+            background-color: var(--color4);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+        }
+
+        .coaching-details {
+            padding: 25px;
+        }
+
+        .coaching-details h3 {
+            color: var(--color4);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .coaching-details ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .coaching-details li {
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .success-stats {
+            background-color: var(--color1);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .stat-item {
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color4);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* Events Section - Updated Layout */
+        .events {
+            background-color: white;
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .event-card {
+            background-color: var(--color2);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .event-photos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding: 10px;
+            background-color: var(--color1);
+        }
+
+        .event-photo {
+            height: 180px;
+            overflow: hidden;
+            border-radius: 6px;
+        }
+
+        .event-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .event-photo:hover img {
+            transform: scale(1.1);
+        }
+
+        .event-details {
+            padding: 25px;
+        }
+
+        .event-details h3 {
+            color: var(--color4);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .event-date {
+            display: inline-block;
+            background-color: var(--color3);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        /* Success Stories Section */
+        .success-stories {
+            background-color: var(--color2);
+        }
+
+        .testimonials {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background-color: var(--color1);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '\201C';
+            font-size: 5rem;
+            color: var(--color4);
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--color3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            margin-bottom: 0;
+            color: var(--color4);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color4);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            color: var(--color2);
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--color3);
+        }
+
+        .footer-column p, .footer-column a {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: var(--color2);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--color3);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--color4-light);
+                flex-direction: column;
+                padding: 20px 0;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                backdrop-filter: blur(10px);
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+                text-align: center;
+            }
+            
+            nav ul li a {
+                justify-content: center;
+                padding: 15px;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .carousel-content h2 {
+                font-size: 2rem;
+            }
+            
+            .carousel-content p {
+                font-size: 1rem;
+            }
+            
+            .leadership-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            .logo-img-container {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .logo-img {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .event-photos {
+                grid-template-columns: 1fr;
+            }
+            
+            .event-photo {
+                height: 220px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                height: 400px;
+            }
+            
+            .carousel-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            section {
+                padding: 40px 0;
+            }
+            
+            .staff-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            
+            .gallery-item {
+                height: 150px;
+            }
+            
+            .logo {
+                gap: 10px;
+            }
+            
+            .logo h1 {
+                font-size: 1.3rem;
+            }
+            
+            .logo-tagline {
+                font-size: 0.7rem;
+            }
+            
+            .coaching-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Enhanced Navbar -->
+    <header>
+        <div class="container header-container">
+            <a href="#home" class="logo">
+                <div class="logo-img-container">
+                    <!-- Replace with your school logo -->
+                    <img src="https://i.ibb.co/0jZXwFMv/Whats-App-Image-2025-12-07-at-8-52-30-PM.jpg" alt="Saraswati Public School Logo" class="logo-img">
+                </div>
+                <div class="logo-text">
+                    <h1>Saraswati Public School</h1>
+                </div>
+            </a>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="#fraternity"><i class="fas fa-users"></i> Fraternity</a></li>
+                    <li><a href="#leadership"><i class="fas fa-user-tie"></i> Leadership</a></li>
+                    <li><a href="#staff"><i class="fas fa-chalkboard-teacher"></i> Staff</a></li>
+                    <li><a href="#gallery"><i class="fas fa-images"></i> Gallery</a></li>
+                    <li><a href="#coaching"><i class="fas fa-graduation-cap"></i> Coaching</a></li>
+                    <li><a href="#events"><i class="fas fa-calendar-alt"></i> Events</a></li>
+                    <li><a href="#success"><i class="fas fa-trophy"></i> Success</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section with Carousel -->
+    <section class="hero" id="home">
+        <div class="carousel">
+            <div class="carousel-slide active" style="background-image: url('https://i.ibb.co/V0r7VBcp/Whats-App-Image-2025-11-28-at-6-05-54-PM-2.jpg');">
+                <div class="carousel-content">
+                    <h2>Welcome to Saraswati Public School</h2>
+                    <p>Nurturing young minds with quality education and holistic development</p>
+                </div>
+            </div>
+            <div class="carousel-slide" style="background-image: url('https://i.ibb.co/679GHyFK/Whats-App-Image-2025-11-28-at-6-05-49-PM.jpg');">
+                <div class="carousel-content">
+                    <h2>Excellence in Education</h2>
+                    <p>Preparing students for success in a rapidly changing world</p>
+                </div>
+            </div>
+            <div class="carousel-slide" style="background-image: url('https://i.ibb.co/0j1HqD6m/Whats-App-Image-2025-11-28-at-6-05-54-PM.jpg');">
+                <div class="carousel-content">
+                    <h2>Building Future Leaders</h2>
+                    <p>Developing character, confidence, and critical thinking skills</p>
+                </div>
+            </div>
+            <div class="carousel-nav">
+                <div class="carousel-dot active" data-slide="0"></div>
+                <div class="carousel-dot" data-slide="1"></div>
+                <div class="carousel-dot" data-slide="2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Saraswati Public School</h2>
+                    <p>Blessed by the vision and guidance of Shri Late Netra Singh Rautela, Saraswati Public School stands as a symbol of quality education and strong values in our community.</p>
+                    <p>Established in 2003, the school has continuously worked towards nurturing every child's unique potential through a balanced focus on academics, arts, sports, and moral values.</p>
+                    <p>Our mission is to create a stimulating and supportive learning environment where students are encouraged to explore their interests, develop critical thinking, and grow into confident, responsible global citizens.</p>
+                    <p>With state-of-the-art facilities, a caring environment, and a team of dedicated educators, Saraswati Public School provides a comprehensive and enriching educational experience from kindergarten to high school.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fraternity Section -->
+    <section class="fraternity" id="fraternity">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Fraternity</h2>
+                <p>Building a strong community of learners, educators, and parents</p>
+            </div>
+            <div class="fraternity-content">
+                <div class="fraternity-item">
+                    <i class="fas fa-users fraternity-icon"></i>
+                    <h3>Students</h3>
+                    <p>Our diverse student body represents the future leaders of tomorrow. We foster an inclusive environment where every student can thrive.</p>
+                </div>
+                <div class="fraternity-item">
+                    <i class="fas fa-chalkboard-teacher fraternity-icon"></i>
+                    <h3>Faculty</h3>
+                    <p>Our experienced and dedicated teachers are committed to providing the highest quality education and mentorship to our students.</p>
+                </div>
+                <div class="fraternity-item">
+                    <i class="fas fa-user-friends fraternity-icon"></i>
+                    <h3>Parents</h3>
+                    <p>We believe in strong parent-school partnerships to ensure the holistic development and success of every child.</p>
+                </div>
+                <div class="fraternity-item">
+                    <i class="fas fa-hands-helping fraternity-icon"></i>
+                    <h3>Alumni</h3>
+                    <p>Our alumni network remains connected to the school, providing guidance and support to current students.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>School Gallery</h2>
+                <p>Capturing memorable moments from our school life</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/xqyNLx5P/Whats-App-Image-2025-12-07-at-8-09-02-PM.jpg" alt="Cultural Event">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/RkrF3pvG/Whats-App-Image-2025-12-07-at-8-50-09-PM.jpg" alt="Sports">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/rLyYXqR/Whats-App-Image-2025-12-07-at-8-07-07-PM.jpg" alt="School Trip">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/xSY62VpP/Whats-App-Image-2025-12-07-at-8-04-34-PM.jpg" alt="Art Exhibition">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/KjyLy1G9/Whats-App-Image-2025-12-07-at-8-00-07-PM.jpg" alt="School Event">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/Xk7BQ08w/Whats-App-Image-2025-12-07-at-8-02-34-PM.jpg" alt="Science Exhibition">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/pNWGsvB/Whats-App-Image-2025-12-07-at-7-50-52-PM.jpg" alt="Award Ceremony">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/NX12zhm/Whats-App-Image-2025-12-07-at-8-27-40-PM.jpg" alt="Cultural Performance">
+                </div>
+            </div>
+        </div> 
+    </section>
+
+    <!-- Coaching Section -->
+    <section class="coaching" id="coaching">
+        <div class="container">
+            <div class="section-header">
+                <h2>Specialized Entrance Exam Coaching</h2>
+                <p>Preparing students for prestigious residential schools and competitive exams</p>
+            </div>
+            <div class="coaching-content">
+                <div class="coaching-card">
+                    <div class="coaching-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div class="coaching-details">
+                        <h3>Jawahar Navodaya Vidyalaya (JNV)</h3>
+                        <p>Comprehensive coaching program for JNV entrance exam Class 6 :</p>
+                        <ul>
+                            <li>Expert faculty with 10+ years of experience</li>
+                            <li>Mock tests based on previous year patterns</li>
+                            <li>Special focus on Mental Ability & Arithmetic</li>
+                            <li>Regular doubt clearing sessions</li>
+                        
+                        </ul>
+                    </div>
+                </div>
+                <div class="coaching-card">
+                    <div class="coaching-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="coaching-details">
+                        <h3>Sainik School Entrance</h3>
+                        <p>Specialized coaching for Sainik School entrance exams:</p>
+                        <ul>
+                            <li>Complete syllabus coverage (Mathematics, English, Intelligence)</li>
+                            <li>Physical fitness and medical test guidance</li>
+                            <li>Interview preparation techniques</li>
+                            <li>Weekly assessment tests</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div class="coaching-card">
+                    <div class="coaching-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="coaching-details">
+                        <h3>Rajiv Navodaya Vidyalaya</h3>
+                        <p>Focused coaching for Rajiv Navodaya entrance tests:</p>
+                        <ul>
+                            <li>Personalized attention with small batch sizes</li>
+                            <li>Comprehensive study material and test series</li>
+                            <li>Time management strategies</li>
+                            <li>Parent-teacher coordination meetings</li>
+                           
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="success-stats">
+                <h3>Our Coaching Program Success</h3>
+                <p>Every year, our students excel in these competitive exams with outstanding results</p>
+                <div class="stats-grid">
+    
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Total Selections</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">15</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Satisfied Parents</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section - Updated -->
+    <section class="events" id="events">
+        <div class="container">
+            <div class="section-header">
+                <h2>Annual Events</h2>
+                <p>Celebrating achievements and fostering creativity through school events</p>
+            </div>
+            <div class="events-grid">
+                <!-- Annual Function -->
+                <div class="event-card">
+                    <div class="event-photos">
+                        <div class="event-photo">
+                            <img src="https://i.ibb.co/xqyNLx5P/Whats-App-Image-2025-12-07-at-8-09-02-PM.jpg" alt="Annual Function Stage">
+                        </div>
+                        <div class="event-photo">
+                            <img src="https://i.ibb.co/NX12zhm/Whats-App-Image-2025-12-07-at-8-27-40-PM.jpg" alt="Cultural Performance">
+                        </div>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-date">December</div>
+                        <h3>Annual Function</h3>
+                        <p>The Annual Function is the highlight of our school year, showcasing the diverse talents of our students through music, dance, drama, and cultural performances. This grand celebration brings together students, parents, teachers, and alumni in a festive atmosphere that highlights our school's achievements and cultural diversity.</p>
+                        <p>Featuring award ceremonies, special guest performances, and presentations by all grade levels, this event celebrates the holistic development of our students throughout the academic year.</p>
+                    </div>
+                </div>
+
+                <!-- Annual Sports Day -->
+                <div class="event-card">
+                    <div class="event-photos">
+                        <div class="event-photo">
+                            <img src="https://i.ibb.co/Z6JVV57c/Whats-App-Image-2025-12-10-at-7-16-16-PM.jpg" alt="Sports Day Race">
+                        </div>
+                        <div class="event-photo">
+                            <img src="https://i.ibb.co/cSHPTNVW/Whats-App-Image-2025-12-10-at-7-10-15-PM.jpg" alt="Sports Day Awards">
+                        </div>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-date">January</div>
+                        <h3>Annual Sports Day</h3>
+                        <p>Annual Sports Day promotes physical fitness, teamwork, and sportsmanship among students. This energetic event includes track and field competitions, team sports, and fun activities for all age groups.</p>
+                        <p>Students participate in various athletic events including races, relay competitions, long jump, high jump, and team games. The day culminates with award ceremonies recognizing outstanding athletic achievements and team spirit.</p>
+                    </div>
+                </div>
+
+                <!-- Science & Arts Exhibition Day -->
+                <div class="event-card">
+                    <div class="event-photos">
+                        <div class="event-photo">
+                            <img src="https://i.ibb.co/Xk7BQ08w/Whats-App-Image-2025-12-07-at-8-02-34-PM.jpg" alt="Science Exhibition">
+                        </div>
+                        <div class="event-photo">
+                            <img src="https://i.ibb.co/xSY62VpP/Whats-App-Image-2025-12-07-at-8-04-34-PM.jpg" alt="Art Exhibition">
+                        </div>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-date">February</div>
+                        <h3>Science & Arts Exhibition Day</h3>
+                        <p>This dual exhibition showcases the innovative scientific projects and creative artistic talents of our students. The Science Exhibition features working models, experiments, and research projects across various scientific disciplines.</p>
+                        <p>The Arts Exhibition displays paintings, sculptures, crafts, and digital art created by students throughout the year. This event encourages creative thinking, scientific inquiry, and appreciation for both arts and sciences among students and visitors.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i>Nishola,Bhimtal,Nainital,Uttarakhand</p>
+                    <p><i class="fas fa-phone"></i> 0248395 , 8630610675</p>
+                  
+                    <div class="social-links">
+                        
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="#home">Home</a>
+                    <a href="#about">About Us</a>
+                    <a href="#leadership">Leadership</a>
+                    <a href="#staff">Our Staff</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#coaching">Coaching</a>
+                    <a href="#events">Events</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>School Hours</h3>
+                    <p>Monday - Friday: 8:00 AM - 2:30 PM</p>
+                    <p>Sunday: Closed</p>
+                    <p>Office Hours: 9:00 AM - 2:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Saraswati Public School. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+
+        // Carousel Functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.carousel-dot');
+        const slideCount = slides.length;
+
+        function showSlide(n) {
+            // Hide all slides
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            
+            // Remove active class from all dots
+            dots.forEach(dot => {
+                dot.classList.remove('active');
+            });
+            
+            // Show the selected slide
+            slides[n].classList.add('active');
+            dots[n].classList.add('active');
+            
+            currentSlide = n;
+        }
+
+        // Auto advance slides
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slideCount;
+            showSlide(currentSlide);
+        }
+
+        // Set up dot click events
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+            });
+        });
+
+        // Auto advance every 5 seconds
+        setInterval(nextSlide, 5000);
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a, .logo').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetSection = document.querySelector(targetId);
+                    
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('nav ul').classList.remove('show');
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'var(--color4)';
+                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.2)';
+            } else {
+                header.style.backgroundColor = 'var(--color4-light)';
+                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
+            }
+        });
+    </script>
+</body>
+</html>
