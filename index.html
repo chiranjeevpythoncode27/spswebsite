@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,6 +32,7 @@
             line-height: 1.5;
             color: var(--text-dark);
             background-color: #fffdf9;
+            overflow-x: hidden;
         }
 
         .container {
@@ -264,32 +266,132 @@
             margin-bottom: 20px;
         }
 
-        /* Gallery Grid */
+        /* Gallery Grid with Captions */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 28px;
         }
 
-        .gallery-item {
-            height: 220px;
-            border-radius: 18px;
+        .gallery-card {
+            background: white;
+            border-radius: 20px;
             overflow: hidden;
             box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
-        .gallery-item img {
+        .gallery-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        .gallery-img {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+        }
+        .gallery-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: 0.4s;
         }
-
-        .gallery-item:hover img {
+        .gallery-card:hover .gallery-img img {
             transform: scale(1.05);
         }
+        .gallery-caption {
+            padding: 14px 16px;
+            background: var(--color1);
+            text-align: center;
+            font-weight: 600;
+            color: var(--color4);
+            border-top: 1px solid rgba(107,156,107,0.3);
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+        }
+        .gallery-caption i {
+            margin-right: 6px;
+            color: var(--gold-accent);
+        }
 
-        /* FEE STRUCTURE CARD (New Section) */
+        /* Leadership & Founders' Memory Page */
+        .leadership-memory-section {
+            background: linear-gradient(145deg, #fffdf5 0%, #fef9ef 100%);
+        }
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+            margin-bottom: 60px;
+        }
+        .leader-card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s;
+            text-align: center;
+            border-bottom: 4px solid var(--color3);
+        }
+        .leader-card:hover {
+            transform: translateY(-8px);
+        }
+        .leader-img-placeholder {
+            background: var(--color2);
+            padding: 30px 0 15px;
+            font-size: 4rem;
+            color: var(--color4);
+        }
+        .leader-info {
+            padding: 20px 20px 25px;
+        }
+        .leader-info h3 {
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+        .leader-designation {
+            color: var(--gold-accent);
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+        .leader-message {
+            font-style: italic;
+            background: #f8f3e8;
+            padding: 12px;
+            border-radius: 24px;
+            font-size: 0.9rem;
+            margin-top: 12px;
+        }
+        .founders-memory {
+            background: var(--color4);
+            border-radius: 40px;
+            padding: 40px 30px;
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+        }
+        .founders-memory h3 {
+            color: var(--gold-accent);
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        .founders-memory p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+        .memory-line {
+            font-size: 1.2rem;
+            font-weight: 500;
+            background: rgba(255,215,120,0.2);
+            display: inline-block;
+            padding: 8px 28px;
+            border-radius: 60px;
+            margin-top: 15px;
+        }
+
+        /* Fee Card */
         .fee-card {
             background: white;
             border-radius: 32px;
@@ -298,46 +400,38 @@
             border: 1px solid rgba(107, 156, 107, 0.3);
             transition: 0.2s;
         }
-
         .fee-header {
             background: var(--color4);
             padding: 20px 30px;
             text-align: center;
         }
-
         .fee-header h3 {
             color: var(--gold-accent);
             font-size: 1.7rem;
             margin-bottom: 8px;
             letter-spacing: 1px;
         }
-
         .fee-header p {
             color: #f0f0e0;
             font-weight: 500;
         }
-
         .fee-details {
             padding: 30px;
         }
-
         .fee-table {
             width: 100%;
             border-collapse: collapse;
         }
-
         .fee-table th, .fee-table td {
             padding: 14px 12px;
             text-align: left;
             border-bottom: 1px solid #e2e0d4;
         }
-
         .fee-table th {
             background: var(--color1);
             color: var(--color4);
             font-weight: 700;
         }
-
         .approval-note {
             background: #f8f3e0;
             padding: 14px 20px;
@@ -348,38 +442,34 @@
             color: #8a6e2b;
         }
 
-        /* Leadership, Staff, Events remain formal */
-        .leadership-grid, .staff-grid, .events-grid {
+        /* Coaching & events */
+        .staff-grid, .events-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
-
-        .leadership-card, .staff-card, .event-card {
+        .event-card {
             background: white;
             border-radius: 20px;
             overflow: hidden;
             box-shadow: var(--shadow-sm);
         }
-
-        .leadership-info, .staff-info, .event-details {
+        .event-details {
             padding: 20px;
         }
 
-        /* footer formal details */
+        /* Footer: leadership details removed completely */
         footer {
             background: var(--color4);
             color: #eef2e6;
             padding: 60px 0 25px;
         }
-
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 40px;
             margin-bottom: 40px;
         }
-
         .footer-column h3 {
             color: var(--color1);
             font-size: 1.4rem;
@@ -387,7 +477,6 @@
             padding-left: 12px;
             margin-bottom: 22px;
         }
-
         .footer-column p, .footer-column a {
             color: #e0e6da;
             text-decoration: none;
@@ -397,18 +486,10 @@
             margin-bottom: 12px;
             font-size: 0.95rem;
         }
-
         .footer-column a:hover {
             color: var(--gold-accent);
             transform: translateX(4px);
         }
-
-        .director-detail, .secretary-detail, .vp-detail {
-            margin-bottom: 16px;
-            padding-left: 8px;
-            border-left: 2px solid var(--color3);
-        }
-
         .footer-founder {
             margin-top: 20px;
             font-style: italic;
@@ -416,12 +497,47 @@
             padding: 10px 12px;
             border-radius: 20px;
         }
-
         .footer-bottom {
             text-align: center;
             border-top: 1px solid rgba(255,255,200,0.2);
             padding-top: 25px;
             font-size: 0.85rem;
+        }
+
+        /* Floating Icons - Phone & WhatsApp */
+        .floating-icons {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            z-index: 999;
+        }
+        .float-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background-color: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .float-icon.phone {
+            background-color: #007bff;
+        }
+        .float-icon.whatsapp {
+            background-color: #25D366;
+        }
+        .float-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 22px rgba(0,0,0,0.3);
         }
 
         @media (max-width: 768px) {
@@ -435,6 +551,7 @@
                 left: 0;
                 padding: 20px;
                 border-radius: 0 0 20px 20px;
+                z-index: 999;
             }
             nav ul.show {
                 display: flex;
@@ -452,6 +569,28 @@
                 padding: 10px 8px;
                 font-size: 0.85rem;
             }
+            .floating-icons {
+                bottom: 20px;
+                right: 20px;
+                gap: 12px;
+            }
+            .float-icon {
+                width: 48px;
+                height: 48px;
+                font-size: 24px;
+            }
+        }
+        @media (max-width: 480px) {
+            .logo-text h1 {
+                font-size: 1.2rem;
+            }
+            .logo-img-container {
+                width: 50px;
+                height: 50px;
+            }
+            .leader-info h3 {
+                font-size: 1.3rem;
+            }
         }
     </style>
 </head>
@@ -464,7 +603,6 @@
                 </div>
                 <div class="logo-text">
                     <h1>Sarswati Public School</h1>
-                    
                 </div>
             </a>
             <div class="mobile-menu"><i class="fas fa-bars"></i></div>
@@ -473,6 +611,7 @@
                     <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#fraternity">Fraternity</a></li>
+                    <li><a href="#leadership-memory">Leadership & Founders</a></li>
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#fee-structure">Fee 2026-27</a></li>
                     <li><a href="#coaching">Coaching</a></li>
@@ -524,24 +663,302 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section class="gallery" id="gallery" style="background: #fefaf0;">
+    <!-- NEW SECTION: Leadership & Founders' Memory (Before Gallery) -->
+    <section class="leadership-memory-section" id="leadership-memory">
         <div class="container">
-            <div class="section-header"><h2>School Gallery</h2><p>Moments of joy, learning & celebration</p></div>
-            <div class="gallery-grid">
-                <div class="gallery-item"><img src="https://i.ibb.co/xqyNLx5P/Whats-App-Image-2025-12-07-at-8-09-02-PM.jpg" alt="Cultural fest"></div>
-                <div class="gallery-item"><img src="https://i.ibb.co/RkrF3pvG/Whats-App-Image-2025-12-07-at-8-50-09-PM.jpg" alt="Sports"></div>
-                <div class="gallery-item"><img src="https://i.ibb.co/rLyYXqR/Whats-App-Image-2025-12-07-at-8-07-07-PM.jpg" alt="Trip"></div>
-                <div class="gallery-item"><img src="https://i.ibb.co/xSY62VpP/Whats-App-Image-2025-12-07-at-8-04-34-PM.jpg" alt="Art"></div>
-                <div class="gallery-item"><img src="https://i.ibb.co/KjyLy1G9/Whats-App-Image-2025-12-07-at-8-00-07-PM.jpg" alt="Event"></div>
-                <div class="gallery-item"><img src="https://i.ibb.co/Xk7BQ08w/Whats-App-Image-2025-12-07-at-8-02-34-PM.jpg" alt="Science"></div>
-                <div class="gallery-item"><img src="https://i.ibb.co/pNWGsvB/Whats-App-Image-2025-12-07-at-7-50-52-PM.jpg" alt="Awards"></div>
-                <div class="gallery-item"><img src="https://i.ibb.co/NX12zhm/Whats-App-Image-2025-12-07-at-8-27-40-PM.jpg" alt="Performance"></div>
+            <div class="section-header"><h2>Leadership & Founders' Memory</h2><p>Guiding lights of our institution</p></div>
+            <div class="leadership-grid">
+                <div class="leader-card">
+                  
+                    <div class="leader-info">
+                        <h3>Sri Harish Chand Singh Rautela</h3>
+                        <div class="leader-designation">Director</div>
+                       
+                </div>
+                <div class="leader-card">
+                    
+                    <div class="leader-info">
+                        <h3>Mrs Geeta Rautela</h3>
+                        <div class="leader-designation">Secretary</div>
+                       
+                </div>
+                <div class="leader-card">
+                   
+                    <div class="leader-info">
+                        <h3>Mrs Pushpa Suyal</h3>
+                        <div class="leader-designation">Vice Principal</div>
+                      
+                </div>
+            </div>
+            <div class="founders-memory">
+                <h3><i class="fas fa-leaf"></i> In Reverent Memory</h3>
+                <p>Late Shri Netra Singh Rautela & Late Smt Sarswati Rautela</p>
+                <div class="memory-line"><i class="fas fa-star-of-life"></i> Founders dreamed of empowering rural education <i class="fas fa-star-of-life"></i></div>
+                <p style="margin-top: 20px; font-size: 1rem;">Their vision continues to illuminate every classroom, every success story, and every dream nurtured within these walls.</p>
             </div>
         </div>
     </section>
 
-    <!-- NEW FEE STRUCTURE SECTION (after gallery) -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Sarswati Public School | Gallery Preview</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fefaf0;
+            font-family: 'Segoe UI', 'Roboto', 'Georgia', serif;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-header h2 {
+            font-size: 2.3rem;
+            color: #1f5e5a;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #6b9c6b;
+            border-radius: 3px;
+        }
+
+        .section-header p {
+            color: #2c3e2f;
+            font-size: 1.1rem;
+            margin-top: 8px;
+        }
+
+        /* Gallery Grid - Fully Responsive */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            background-color: #e9e4d8;
+        }
+
+        .gallery-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-card:hover .gallery-img img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            padding: 16px 18px;
+            background: #fffdf7;
+            text-align: center;
+            font-weight: 600;
+            color: #1f5e5a;
+            border-top: 2px solid #e9e2d0;
+            font-size: 1rem;
+            letter-spacing: 0.3px;
+            transition: background 0.2s;
+        }
+
+        .gallery-caption i {
+            margin-right: 8px;
+            color: #c9a03d;
+            font-size: 1.1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            .gallery-grid {
+                gap: 20px;
+                grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            }
+            .gallery-img {
+                height: 210px;
+            }
+            .gallery-caption {
+                padding: 12px 14px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+            .gallery-img {
+                height: 220px;
+            }
+        }
+
+        /* subtle back link for demo */
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: #6b9c6b;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Gallery Section - Fixed & Proper -->
+    <section class="gallery" id="gallery">
+        <div class="section-header">
+            <h2>School Gallery</h2>
+            <p>Moments of joy, learning & celebration</p>
+        </div>
+        <div class="gallery-grid">
+            <!-- 1 -->
+            <div class="gallery-card">
+                <div class="gallery-img">
+                    <img src="https://i.ibb.co/xqyNLx5P/Whats-App-Image-2025-12-07-at-8-09-02-PM.jpg" alt="Annual Day Celebration">
+                </div>
+                <div class="gallery-caption">
+                    <i class="fas fa-music"></i> Annual Day Celebration
+                </div>
+            </div>
+            <!-- 2 -->
+            <div class="gallery-card">
+                <div class="gallery-img">
+                    <img src="https://i.ibb.co/RkrF3pvG/Whats-App-Image-2025-12-07-at-8-50-09-PM.jpg" alt="Sports Meet">
+                </div>
+                <div class="gallery-caption">
+                    <i class="fas fa-futbol"></i> Sports Meet
+                </div>
+            </div>
+            <!-- 3 -->
+            <div class="gallery-card">
+                <div class="gallery-img">
+                    <img src="https://i.ibb.co/rLyYXqR/Whats-App-Image-2025-12-07-at-8-07-07-PM.jpg" alt="Students Trip">
+                </div>
+                <div class="gallery-caption">
+                    <i class="fas fa-tree"></i> Students Educational Trip
+                </div>
+            </div>
+            <!-- 4 -->
+            <div class="gallery-card">
+                <div class="gallery-img">
+                    <img src="https://i.ibb.co/xSY62VpP/Whats-App-Image-2025-12-07-at-8-04-34-PM.jpg" alt="Art & Craft Display">
+                </div>
+                <div class="gallery-caption">
+                    <i class="fas fa-palette"></i> Art & Craft Display
+                </div>
+            </div>
+            <!-- 5 -->
+            <div class="gallery-card">
+                <div class="gallery-img">
+                    <img src="https://i.ibb.co/KjyLy1G9/Whats-App-Image-2025-12-07-at-8-00-07-PM.jpg" alt="Plantation Drive">
+                </div>
+                <div class="gallery-caption">
+                    <i class="fas fa-seedling"></i> Green Plantation Drive
+                </div>
+            </div>
+            <!-- 6 -->
+            <div class="gallery-card">
+                <div class="gallery-img">
+                    <img src="https://i.ibb.co/Xk7BQ08w/Whats-App-Image-2025-12-07-at-8-02-34-PM.jpg" alt="Science & Innovation Fair">
+                </div>
+                <div class="gallery-caption">
+                    <i class="fas fa-flask"></i> Science & Innovation Fair
+                </div>
+            </div>
+            <!-- 7 -->
+            <div class="gallery-card">
+                <div class="gallery-img">
+                    <img src="https://i.ibb.co/pNWGsvB/Whats-App-Image-2025-12-07-at-7-50-52-PM.jpg" alt="Prize Distribution">
+                </div>
+                <div class="gallery-caption">
+                    <i class="fas fa-trophy"></i> Prize Distribution Ceremony
+                </div>
+            </div>
+            <!-- 8 -->
+            <div class="gallery-card">
+                <div class="gallery-img">
+                    <img src="https://i.ibb.co/NX12zhm/Whats-App-Image-2025-12-07-at-8-27-40-PM.jpg" alt="Annual Function">
+                </div>
+                <div class="gallery-caption">
+                    <i class="fas fa-dharmachakra"></i> Grand Annual Function
+                </div>
+            </div>
+            <!-- 9 (NEW: Educational Tour with new image URL from your snippet) -->
+            <div class="gallery-card">
+                <div class="gallery-img">
+                    <img src="https://i.ibb.co/3Y4mmB7r/Whats-App-Image-2026-04-19-at-4-15-15-PM.jpg" alt="Educational Tour">
+                </div>
+                <div class="gallery-caption">
+                    <i class="fas fa-bus"></i> Prize Distribution
+                </div>
+            </div>
+            <!-- 10 (NEW: Students Trip second image) -->
+            <div class="gallery-card">
+                <div class="gallery-img">
+                    <img src="https://i.ibb.co/mV99d5rS/Whats-App-Image-2026-04-19-at-4-15-31-PM.jpg" alt="Students Outdoor Trip">
+                </div>
+                <div class="gallery-caption">
+                    <i class="fas fa-hiking"></i> Students Adventure Trip
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+</html>
+    <!-- Fee Structure Section -->
     <section id="fee-structure" style="background: white; padding: 60px 0;">
         <div class="container">
             <div class="fee-card">
@@ -552,9 +969,7 @@
                 </div>
                 <div class="fee-details">
                     <table class="fee-table">
-                        <thead>
-                            <tr><th>Class</th><th>Monthly Fee (₹)</th></tr>
-                        </thead>
+                        <thead><tr><th>Class</th><th>Monthly Fee (₹)</th></tr></thead>
                         <tbody>
                             <tr><td>L.KG / U.KG</td><td>₹ 1,000</td></tr>
                             <tr><td>1st</td><td>₹ 1,150</td></tr>
@@ -562,9 +977,7 @@
                             <tr><td>6th to 8th</td><td>₹ 1,400</td></tr>
                         </tbody>
                     </table>
-                    <div class="approval-note">
-                        <i class="fas fa-check-circle"></i> Approved by PTA Executive Body on 18/03/2026. Applicable for Academic Session 2026-27.
-                    </div>
+                    <div class="approval-note"><i class="fas fa-check-circle"></i> Approved by PTA Executive Body on 18/03/2026. Applicable for Academic Session 2026-27.</div>
                 </div>
             </div>
         </div>
@@ -598,51 +1011,45 @@
         </div>
     </section>
 
-    <!-- FOOTER (with all required formal details) -->
+    <!-- FOOTER (Leadership details completely removed, only essential info) -->
     <footer>
         <div class="container">
             <div class="footer-content">
-                <!-- Leadership & Contact Details Column -->
                 <div class="footer-column">
-                    <h3><i class="fas fa-landmark"></i> School Leadership</h3>
-                    <div class="director-detail"><strong><i class="fas fa-user-tie"></i> Director:</strong> Sri Harish Chand Singh Rautela</div>
-                    <div class="secretary-detail"><strong><i class="fas fa-user-graduate"></i> Secretary:</strong> Mrs Geeta Rautela</div>
-                    <div class="vp-detail"><strong><i class="fas fa-chalkboard-user"></i> Vice Principal:</strong> Mrs Pushpa Suyal</div>
-                    <div style="margin: 15px 0 10px 0;"><strong><i class="fas fa-phone-alt"></i> Contact Numbers:</strong></div>
-                    <p><i class="fas fa-mobile-alt"></i> Director: 9412969392</p>
-                    <p><i class="fas fa-phone"></i> Secretary: 9410338753</p>
-                    <p><i class="fas fa-phone-volume"></i> Vice Principal: 8630670675</p>
+                    <h3><i class="fas fa-school"></i> Sarswati Public School</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Nishola, Bhimtal, Nainital, Uttarakhand - 263136</p>
+                    <p><i class="fas fa-phone-alt"></i> 0248395 , 8630610675</p>
                     <div class="footer-founder">
-                        <i class="fas fa-leaf"></i> Founder's Blessings: <strong>Late Sri Netra Singh Rautela</strong> & <strong>Late Smt Sarswati Rautela</strong>
+                        <i class="fas fa-heart"></i> In loving memory of founders: Late Sri Netra Singh Rautela & Late Smt Sarswati Rautela
                     </div>
                 </div>
-                
                 <div class="footer-column">
-                    <h3>📞 Contact Info</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Nishola, Bhimtal, Nainital, Uttarakhand - 263136</p>
-                    <p><i class="fas fa-phone"></i> 0248395 , 8630610675</p>
-                    
+                    <h3>📞 Contact & Social</h3>
+                    <p><i class="fas fa-envelope"></i> contact@sarswatipublicschool.edu</p>
                     <div class="social-links" style="display:flex; gap:12px; margin-top:15px;">
                         <a href="#" style="color:white; background:rgba(255,255,255,0.1); width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center;"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" style="color:white; background:rgba(255,255,255,0.1); width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center;"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                
-               
                 <div class="footer-column">
                     <h3>School Timings</h3>
                     <p><i class="far fa-clock"></i> Monday - Saturday: 8:00 AM - 2:30 PM</p>
                     <p><i class="fas fa-calendar-alt"></i> Sunday: Closed</p>
                     <p><i class="fas fa-building"></i> Office Hours: 9:00 AM - 2:00 PM</p>
-                    <p style="margin-top:10px;"><i class="fas fa-globe"></i> Affiliated to Uttarakhand Board of School Education</p>
+                    <p><i class="fas fa-globe"></i> Affiliated to Uttarakhand Board</p>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>© 2025 Sarswati Public School | Developed with dedication | All Rights Reserved</p>
-                <p style="margin-top:6px;">In loving memory of our founders Late Sri Netra Singh Rautela & Late Smt Sarswati Rautela 🙏</p>
             </div>
         </div>
     </footer>
+
+    <!-- Floating Icons: Phone & WhatsApp -->
+    <div class="floating-icons">
+        <a href="tel:9412969392" class="float-icon phone" aria-label="Call"><i class="fas fa-phone-alt"></i></a>
+        <a href="https://wa.me/919412969392?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20Sarswati%20Public%20School" class="float-icon whatsapp" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
 
     <script>
         // mobile menu toggle
@@ -667,7 +1074,7 @@
             dots.forEach((dot, i) => dot.addEventListener('click', () => showSlide(i)));
             setInterval(() => { showSlide(slideIndex+1); }, 5000);
         }
-        // smooth scroll
+        // smooth scroll & close mobile menu
         document.querySelectorAll('nav a, .logo').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const hash = this.getAttribute('href');
@@ -689,3 +1096,4 @@
     </script>
 </body>
 </html>
+```
