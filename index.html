@@ -314,7 +314,7 @@
             font-size: 1.1rem;
         }
 
-        /* Leadership & Founders' Memory Page - Enhanced */
+        /* Leadership & Founders' Memory Page - Updated (No Photos, Added Numbers & New Quotes) */
         .leadership-memory-section {
             background: linear-gradient(145deg, #fffdf5 0%, #fef9ef 100%);
         }
@@ -336,14 +336,9 @@
         .leader-card:hover {
             transform: translateY(-8px);
         }
-        .leader-img-placeholder {
-            background: var(--color2);
-            padding: 35px 0 20px;
-            font-size: 4.5rem;
-            color: var(--color4);
-        }
+        /* Removed photo/icon placeholder - no image section */
         .leader-info {
-            padding: 20px 25px 30px;
+            padding: 30px 25px 35px;
         }
         .leader-info h3 {
             font-size: 1.7rem;
@@ -353,18 +348,33 @@
         .leader-designation {
             color: var(--gold-accent);
             font-weight: 700;
-            margin-bottom: 18px;
+            margin-bottom: 12px;
             letter-spacing: 0.5px;
             font-size: 1.1rem;
+        }
+        .leader-contact {
+            background: #f0ebe0;
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--color4);
+            margin-bottom: 18px;
+        }
+        .leader-contact i {
+            margin-right: 8px;
+            color: var(--gold-accent);
         }
         .leader-message {
             font-style: italic;
             background: #f8f3e8;
-            padding: 14px;
+            padding: 16px;
             border-radius: 24px;
             font-size: 0.95rem;
             margin-top: 15px;
             color: #3a5c3e;
+            line-height: 1.5;
         }
         .founders-memory {
             background: var(--color4);
@@ -827,36 +837,39 @@
         </div>
     </section>
 
-    <!-- Leadership & Founders' Memory Section -->
+    <!-- Leadership & Founders' Memory Section (UPDATED: No photos, added numbers & new quotes) -->
     <section class="leadership-memory-section" id="leadership-memory">
         <div class="container">
             <div class="section-header"><h2>Leadership & Founders' Memory</h2><p>Guiding lights of our institution</p></div>
             <div class="leadership-grid">
+                <!-- Director Card - Foundation of Creativity & Management -->
                 <div class="leader-card">
-                    <div class="leader-img-placeholder"><i class="fas fa-user-tie"></i></div>
                     <div class="leader-info">
                         <h3>Sri Harish Chand Singh Rautela</h3>
                         <div class="leader-designation">Director</div>
-                        <p>With over two decades of vision, he has transformed Sarswati Public School into a center of academic excellence and holistic growth.</p>
-                        <div class="leader-message"><i class="fas fa-quote-left"></i> "Empower every child to discover their unique potential."</div>
+                        <div class="leader-contact"><i class="fas fa-phone-alt"></i> +91-9412969392</div>
+                        <p>Visionary leader with a passion for creative education and institutional excellence. He believes in blending innovation with structured management.</p>
+                        <div class="leader-message"><i class="fas fa-quote-left"></i> "True education is the fusion of creativity and management — where dreams are designed, and futures are built with discipline and imagination."</div>
                     </div>
                 </div>
+                <!-- Secretary Card - Creativity, Enlightenment & Motivation -->
                 <div class="leader-card">
-                    <div class="leader-img-placeholder"><i class="fas fa-user-graduate"></i></div>
                     <div class="leader-info">
                         <h3>Mrs Geeta Rautela</h3>
                         <div class="leader-designation">Secretary</div>
-                        <p>Dedicated to fostering inclusive education and value-based learning, she leads with compassion and strategic insight.</p>
-                        <div class="leader-message"><i class="fas fa-quote-left"></i> "Education is the bridge to a just and enlightened society."</div>
+                        <div class="leader-contact"><i class="fas fa-phone-alt"></i> +91-9410338753</div>
+                        <p>A visionary who fosters enlightenment, creativity, and motivational energy throughout the institution. Her guidance inspires both students and staff.</p>
+                        <div class="leader-message"><i class="fas fa-quote-left"></i> "Enlightenment sparks creativity, and motivation turns it into action. Let every mind shine with its unique brilliance."</div>
                     </div>
                 </div>
+                <!-- Vice Principal Card - Emotional Support & Student Connection -->
                 <div class="leader-card">
-                    <div class="leader-img-placeholder"><i class="fas fa-chalkboard-user"></i></div>
                     <div class="leader-info">
                         <h3>Mrs Pushpa Suyal</h3>
                         <div class="leader-designation">Vice Principal</div>
-                        <p>Academic innovator and mentor, she ensures curricular excellence and student well-being at every step.</p>
-                        <div class="leader-message"><i class="fas fa-quote-left"></i> "Nurturing curiosity, building character."</div>
+                        <div class="leader-contact"><i class="fas fa-phone-alt"></i> +91-8630610675</div>
+                        <p>A compassionate mentor who provides emotional strength and unwavering support to every student. She nurtures young hearts with care and understanding.</p>
+                        <div class="leader-message"><i class="fas fa-quote-left"></i> "Every child carries a universe of emotions. Listen, love, and lead — that's the heart of true education."</div>
                     </div>
                 </div>
             </div>
