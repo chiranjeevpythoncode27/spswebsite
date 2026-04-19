@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -266,60 +265,62 @@
             margin-bottom: 20px;
         }
 
-        /* Gallery Grid with Captions */
+        /* Gallery Grid with Captions - Enhanced Responsive */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 28px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
         }
 
         .gallery-card {
             background: white;
-            border-radius: 20px;
+            border-radius: 24px;
             overflow: hidden;
             box-shadow: var(--shadow-sm);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .gallery-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
             box-shadow: var(--shadow-md);
         }
         .gallery-img {
             width: 100%;
-            height: 220px;
+            height: 250px;
             overflow: hidden;
+            background-color: #e9e4d8;
         }
         .gallery-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: 0.4s;
+            transition: transform 0.4s ease;
         }
         .gallery-card:hover .gallery-img img {
             transform: scale(1.05);
         }
         .gallery-caption {
-            padding: 14px 16px;
+            padding: 16px 18px;
             background: var(--color1);
             text-align: center;
             font-weight: 600;
             color: var(--color4);
-            border-top: 1px solid rgba(107,156,107,0.3);
-            font-size: 0.95rem;
+            border-top: 2px solid #e9e2d0;
+            font-size: 1rem;
             letter-spacing: 0.3px;
         }
         .gallery-caption i {
-            margin-right: 6px;
+            margin-right: 8px;
             color: var(--gold-accent);
+            font-size: 1.1rem;
         }
 
-        /* Leadership & Founders' Memory Page */
+        /* Leadership & Founders' Memory Page - Enhanced */
         .leadership-memory-section {
             background: linear-gradient(145deg, #fffdf5 0%, #fef9ef 100%);
         }
         .leadership-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 35px;
             margin-bottom: 60px;
         }
@@ -337,35 +338,38 @@
         }
         .leader-img-placeholder {
             background: var(--color2);
-            padding: 30px 0 15px;
-            font-size: 4rem;
+            padding: 35px 0 20px;
+            font-size: 4.5rem;
             color: var(--color4);
         }
         .leader-info {
-            padding: 20px 20px 25px;
+            padding: 20px 25px 30px;
         }
         .leader-info h3 {
-            font-size: 1.6rem;
-            margin-bottom: 5px;
+            font-size: 1.7rem;
+            margin-bottom: 8px;
+            color: var(--color4);
         }
         .leader-designation {
             color: var(--gold-accent);
             font-weight: 700;
-            margin-bottom: 15px;
+            margin-bottom: 18px;
             letter-spacing: 0.5px;
+            font-size: 1.1rem;
         }
         .leader-message {
             font-style: italic;
             background: #f8f3e8;
-            padding: 12px;
+            padding: 14px;
             border-radius: 24px;
-            font-size: 0.9rem;
-            margin-top: 12px;
+            font-size: 0.95rem;
+            margin-top: 15px;
+            color: #3a5c3e;
         }
         .founders-memory {
             background: var(--color4);
             border-radius: 40px;
-            padding: 40px 30px;
+            padding: 45px 30px;
             text-align: center;
             color: white;
             margin-top: 20px;
@@ -386,9 +390,9 @@
             font-weight: 500;
             background: rgba(255,215,120,0.2);
             display: inline-block;
-            padding: 8px 28px;
+            padding: 10px 30px;
             border-radius: 60px;
-            margin-top: 15px;
+            margin-top: 20px;
         }
 
         /* Fee Card */
@@ -443,7 +447,7 @@
         }
 
         /* Coaching & events */
-        .staff-grid, .events-grid {
+        .events-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
@@ -453,12 +457,19 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: var(--shadow-sm);
+            transition: transform 0.2s;
+        }
+        .event-card:hover {
+            transform: translateY(-5px);
         }
         .event-details {
-            padding: 20px;
+            padding: 25px;
+        }
+        .event-details h3 {
+            font-size: 1.4rem;
         }
 
-        /* Footer: leadership details removed completely */
+        /* Footer: leadership details removed */
         footer {
             background: var(--color4);
             color: #eef2e6;
@@ -504,7 +515,7 @@
             font-size: 0.85rem;
         }
 
-        /* Floating Icons - Phone & WhatsApp */
+        /* Floating Icons */
         .floating-icons {
             position: fixed;
             bottom: 25px;
@@ -518,7 +529,6 @@
             width: 55px;
             height: 55px;
             border-radius: 50%;
-            background-color: #25D366;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -540,6 +550,22 @@
             box-shadow: 0 8px 22px rgba(0,0,0,0.3);
         }
 
+        /* ========== ENHANCED RESPONSIVE STYLES ========== */
+        @media (max-width: 992px) {
+            .container {
+                width: 92%;
+            }
+            section {
+                padding: 60px 0;
+            }
+            .hero {
+                height: 450px;
+            }
+            .carousel-content h2 {
+                font-size: 2.3rem;
+            }
+        }
+
         @media (max-width: 768px) {
             nav ul {
                 display: none;
@@ -552,22 +578,67 @@
                 padding: 20px;
                 border-radius: 0 0 20px 20px;
                 z-index: 999;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.2);
             }
             nav ul.show {
                 display: flex;
             }
+            nav ul li a {
+                padding: 12px 20px;
+                justify-content: center;
+            }
             .mobile-menu {
                 display: block;
+            }
+            .hero {
+                height: 380px;
             }
             .carousel-content h2 {
                 font-size: 1.8rem;
             }
+            .carousel-content p {
+                font-size: 0.95rem;
+            }
             .section-header h2 {
                 font-size: 1.8rem;
+            }
+            .section-header {
+                margin-bottom: 40px;
+            }
+            .gallery-grid {
+                gap: 20px;
+                grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            }
+            .gallery-img {
+                height: 210px;
+            }
+            .gallery-caption {
+                padding: 12px 14px;
+                font-size: 0.9rem;
+            }
+            .leadership-grid {
+                gap: 25px;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+            .leader-info h3 {
+                font-size: 1.4rem;
+            }
+            .founders-memory h3 {
+                font-size: 1.6rem;
+            }
+            .founders-memory p {
+                font-size: 1rem;
+            }
+            .memory-line {
+                font-size: 1rem;
+                padding: 6px 20px;
             }
             .fee-table th, .fee-table td {
                 padding: 10px 8px;
                 font-size: 0.85rem;
+            }
+            .fee-header h3 {
+                font-size: 1.4rem;
             }
             .floating-icons {
                 bottom: 20px;
@@ -579,7 +650,11 @@
                 height: 48px;
                 font-size: 24px;
             }
+            .footer-content {
+                gap: 30px;
+            }
         }
+
         @media (max-width: 480px) {
             .logo-text h1 {
                 font-size: 1.2rem;
@@ -588,9 +663,98 @@
                 width: 50px;
                 height: 50px;
             }
-            .leader-info h3 {
-                font-size: 1.3rem;
+            .logo-img {
+                width: 42px;
+                height: 42px;
             }
+            .hero {
+                height: 320px;
+            }
+            .carousel-content h2 {
+                font-size: 1.4rem;
+            }
+            .section-header h2 {
+                font-size: 1.5rem;
+            }
+            .section-header p {
+                font-size: 0.9rem;
+            }
+            .fraternity-item {
+                padding: 20px 15px;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+            .gallery-img {
+                height: 220px;
+            }
+            .leadership-grid {
+                grid-template-columns: 1fr;
+            }
+            .leader-card {
+                max-width: 100%;
+            }
+            .fee-details {
+                padding: 20px;
+            }
+            .fee-table th, .fee-table td {
+                font-size: 0.8rem;
+                padding: 8px 6px;
+            }
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-column h3 {
+                font-size: 1.2rem;
+            }
+            .floating-icons {
+                bottom: 15px;
+                right: 15px;
+                gap: 10px;
+            }
+            .float-icon {
+                width: 44px;
+                height: 44px;
+                font-size: 22px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .container {
+                width: 95%;
+                padding: 0 12px;
+            }
+            .logo {
+                gap: 8px;
+            }
+            .logo-text h1 {
+                font-size: 1rem;
+            }
+            .carousel-content h2 {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Fix for horizontal scroll prevention */
+        img, iframe, video, .gallery-card, .leader-card, .fraternity-item {
+            max-width: 100%;
+        }
+        .fee-table {
+            display: block;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        .fee-table::-webkit-scrollbar {
+            height: 5px;
+        }
+        .fee-table::-webkit-scrollbar-track {
+            background: #e2e0d4;
+            border-radius: 10px;
+        }
+        .fee-table::-webkit-scrollbar-thumb {
+            background: var(--color3);
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -663,31 +827,37 @@
         </div>
     </section>
 
-    <!-- NEW SECTION: Leadership & Founders' Memory (Before Gallery) -->
+    <!-- Leadership & Founders' Memory Section -->
     <section class="leadership-memory-section" id="leadership-memory">
         <div class="container">
             <div class="section-header"><h2>Leadership & Founders' Memory</h2><p>Guiding lights of our institution</p></div>
             <div class="leadership-grid">
                 <div class="leader-card">
-                  
+                    <div class="leader-img-placeholder"><i class="fas fa-user-tie"></i></div>
                     <div class="leader-info">
                         <h3>Sri Harish Chand Singh Rautela</h3>
                         <div class="leader-designation">Director</div>
-                       
+                        <p>With over two decades of vision, he has transformed Sarswati Public School into a center of academic excellence and holistic growth.</p>
+                        <div class="leader-message"><i class="fas fa-quote-left"></i> "Empower every child to discover their unique potential."</div>
+                    </div>
                 </div>
                 <div class="leader-card">
-                    
+                    <div class="leader-img-placeholder"><i class="fas fa-user-graduate"></i></div>
                     <div class="leader-info">
                         <h3>Mrs Geeta Rautela</h3>
                         <div class="leader-designation">Secretary</div>
-                       
+                        <p>Dedicated to fostering inclusive education and value-based learning, she leads with compassion and strategic insight.</p>
+                        <div class="leader-message"><i class="fas fa-quote-left"></i> "Education is the bridge to a just and enlightened society."</div>
+                    </div>
                 </div>
                 <div class="leader-card">
-                   
+                    <div class="leader-img-placeholder"><i class="fas fa-chalkboard-user"></i></div>
                     <div class="leader-info">
                         <h3>Mrs Pushpa Suyal</h3>
                         <div class="leader-designation">Vice Principal</div>
-                      
+                        <p>Academic innovator and mentor, she ensures curricular excellence and student well-being at every step.</p>
+                        <div class="leader-message"><i class="fas fa-quote-left"></i> "Nurturing curiosity, building character."</div>
+                    </div>
                 </div>
             </div>
             <div class="founders-memory">
@@ -699,265 +869,25 @@
         </div>
     </section>
 
- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Sarswati Public School | Gallery Preview</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: #fefaf0;
-            font-family: 'Segoe UI', 'Roboto', 'Georgia', serif;
-            padding: 40px 20px;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 55px;
-        }
-
-        .section-header h2 {
-            font-size: 2.3rem;
-            color: #1f5e5a;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 12px;
-            font-weight: 600;
-        }
-
-        .section-header h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: #6b9c6b;
-            border-radius: 3px;
-        }
-
-        .section-header p {
-            color: #2c3e2f;
-            font-size: 1.1rem;
-            margin-top: 8px;
-        }
-
-        /* Gallery Grid - Fully Responsive */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .gallery-card {
-            background: white;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .gallery-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        .gallery-img {
-            width: 100%;
-            height: 250px;
-            overflow: hidden;
-            background-color: #e9e4d8;
-        }
-
-        .gallery-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .gallery-card:hover .gallery-img img {
-            transform: scale(1.05);
-        }
-
-        .gallery-caption {
-            padding: 16px 18px;
-            background: #fffdf7;
-            text-align: center;
-            font-weight: 600;
-            color: #1f5e5a;
-            border-top: 2px solid #e9e2d0;
-            font-size: 1rem;
-            letter-spacing: 0.3px;
-            transition: background 0.2s;
-        }
-
-        .gallery-caption i {
-            margin-right: 8px;
-            color: #c9a03d;
-            font-size: 1.1rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .section-header h2 {
-                font-size: 1.8rem;
-            }
-            .gallery-grid {
-                gap: 20px;
-                grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            }
-            .gallery-img {
-                height: 210px;
-            }
-            .gallery-caption {
-                padding: 12px 14px;
-                font-size: 0.9rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .gallery-grid {
-                grid-template-columns: 1fr;
-                gap: 18px;
-            }
-            .gallery-img {
-                height: 220px;
-            }
-        }
-
-        /* subtle back link for demo */
-        .back-link {
-            display: inline-block;
-            margin-bottom: 30px;
-            color: #6b9c6b;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .back-link:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-<div class="container">
-    <!-- Gallery Section - Fixed & Proper -->
-    <section class="gallery" id="gallery">
-        <div class="section-header">
-            <h2>School Gallery</h2>
-            <p>Moments of joy, learning & celebration</p>
-        </div>
-        <div class="gallery-grid">
-            <!-- 1 -->
-            <div class="gallery-card">
-                <div class="gallery-img">
-                    <img src="https://i.ibb.co/xqyNLx5P/Whats-App-Image-2025-12-07-at-8-09-02-PM.jpg" alt="Annual Day Celebration">
-                </div>
-                <div class="gallery-caption">
-                    <i class="fas fa-music"></i> Annual Day Celebration
-                </div>
-            </div>
-            <!-- 2 -->
-            <div class="gallery-card">
-                <div class="gallery-img">
-                    <img src="https://i.ibb.co/RkrF3pvG/Whats-App-Image-2025-12-07-at-8-50-09-PM.jpg" alt="Sports Meet">
-                </div>
-                <div class="gallery-caption">
-                    <i class="fas fa-futbol"></i> Sports Meet
-                </div>
-            </div>
-            <!-- 3 -->
-            <div class="gallery-card">
-                <div class="gallery-img">
-                    <img src="https://i.ibb.co/rLyYXqR/Whats-App-Image-2025-12-07-at-8-07-07-PM.jpg" alt="Students Trip">
-                </div>
-                <div class="gallery-caption">
-                    <i class="fas fa-tree"></i> Students Educational Trip
-                </div>
-            </div>
-            <!-- 4 -->
-            <div class="gallery-card">
-                <div class="gallery-img">
-                    <img src="https://i.ibb.co/xSY62VpP/Whats-App-Image-2025-12-07-at-8-04-34-PM.jpg" alt="Art & Craft Display">
-                </div>
-                <div class="gallery-caption">
-                    <i class="fas fa-palette"></i> Art & Craft Display
-                </div>
-            </div>
-            <!-- 5 -->
-            <div class="gallery-card">
-                <div class="gallery-img">
-                    <img src="https://i.ibb.co/KjyLy1G9/Whats-App-Image-2025-12-07-at-8-00-07-PM.jpg" alt="Plantation Drive">
-                </div>
-                <div class="gallery-caption">
-                    <i class="fas fa-seedling"></i> Green Plantation Drive
-                </div>
-            </div>
-            <!-- 6 -->
-            <div class="gallery-card">
-                <div class="gallery-img">
-                    <img src="https://i.ibb.co/Xk7BQ08w/Whats-App-Image-2025-12-07-at-8-02-34-PM.jpg" alt="Science & Innovation Fair">
-                </div>
-                <div class="gallery-caption">
-                    <i class="fas fa-flask"></i> Science & Innovation Fair
-                </div>
-            </div>
-            <!-- 7 -->
-            <div class="gallery-card">
-                <div class="gallery-img">
-                    <img src="https://i.ibb.co/pNWGsvB/Whats-App-Image-2025-12-07-at-7-50-52-PM.jpg" alt="Prize Distribution">
-                </div>
-                <div class="gallery-caption">
-                    <i class="fas fa-trophy"></i> Prize Distribution Ceremony
-                </div>
-            </div>
-            <!-- 8 -->
-            <div class="gallery-card">
-                <div class="gallery-img">
-                    <img src="https://i.ibb.co/NX12zhm/Whats-App-Image-2025-12-07-at-8-27-40-PM.jpg" alt="Annual Function">
-                </div>
-                <div class="gallery-caption">
-                    <i class="fas fa-dharmachakra"></i> Grand Annual Function
-                </div>
-            </div>
-            <!-- 9 (NEW: Educational Tour with new image URL from your snippet) -->
-            <div class="gallery-card">
-                <div class="gallery-img">
-                    <img src="https://i.ibb.co/3Y4mmB7r/Whats-App-Image-2026-04-19-at-4-15-15-PM.jpg" alt="Educational Tour">
-                </div>
-                <div class="gallery-caption">
-                    <i class="fas fa-bus"></i> Prize Distribution
-                </div>
-            </div>
-            <!-- 10 (NEW: Students Trip second image) -->
-            <div class="gallery-card">
-                <div class="gallery-img">
-                    <img src="https://i.ibb.co/mV99d5rS/Whats-App-Image-2026-04-19-at-4-15-31-PM.jpg" alt="Students Outdoor Trip">
-                </div>
-                <div class="gallery-caption">
-                    <i class="fas fa-hiking"></i> Students Adventure Trip
-                </div>
+    <!-- Gallery Section - Proper with Captions -->
+    <section class="gallery" id="gallery" style="background: #fefaf0;">
+        <div class="container">
+            <div class="section-header"><h2>School Gallery</h2><p>Moments of joy, learning & celebration</p></div>
+            <div class="gallery-grid">
+                <div class="gallery-card"><div class="gallery-img"><img src="https://i.ibb.co/xqyNLx5P/Whats-App-Image-2025-12-07-at-8-09-02-PM.jpg" alt="Annual Day"></div><div class="gallery-caption"><i class="fas fa-music"></i> Annual Day Celebration</div></div>
+                <div class="gallery-card"><div class="gallery-img"><img src="https://i.ibb.co/RkrF3pvG/Whats-App-Image-2025-12-07-at-8-50-09-PM.jpg" alt="Sports Meet"></div><div class="gallery-caption"><i class="fas fa-futbol"></i> Sports Meet</div></div>
+                <div class="gallery-card"><div class="gallery-img"><img src="https://i.ibb.co/rLyYXqR/Whats-App-Image-2025-12-07-at-8-07-07-PM.jpg" alt="Educational Trip"></div><div class="gallery-caption"><i class="fas fa-tree"></i> Students Educational Trip</div></div>
+                <div class="gallery-card"><div class="gallery-img"><img src="https://i.ibb.co/xSY62VpP/Whats-App-Image-2025-12-07-at-8-04-34-PM.jpg" alt="Art & Craft"></div><div class="gallery-caption"><i class="fas fa-palette"></i> Art & Craft Display</div></div>
+                <div class="gallery-card"><div class="gallery-img"><img src="https://i.ibb.co/KjyLy1G9/Whats-App-Image-2025-12-07-at-8-00-07-PM.jpg" alt="Plantation"></div><div class="gallery-caption"><i class="fas fa-seedling"></i> Green Plantation Drive</div></div>
+                <div class="gallery-card"><div class="gallery-img"><img src="https://i.ibb.co/Xk7BQ08w/Whats-App-Image-2025-12-07-at-8-02-34-PM.jpg" alt="Science Fair"></div><div class="gallery-caption"><i class="fas fa-flask"></i> Science & Innovation Fair</div></div>
+                <div class="gallery-card"><div class="gallery-img"><img src="https://i.ibb.co/pNWGsvB/Whats-App-Image-2025-12-07-at-7-50-52-PM.jpg" alt="Prize Distribution"></div><div class="gallery-caption"><i class="fas fa-trophy"></i> Prize Distribution Ceremony</div></div>
+                <div class="gallery-card"><div class="gallery-img"><img src="https://i.ibb.co/NX12zhm/Whats-App-Image-2025-12-07-at-8-27-40-PM.jpg" alt="Annual Function"></div><div class="gallery-caption"><i class="fas fa-dharmachakra"></i> Grand Annual Function</div></div>
+                <div class="gallery-card"><div class="gallery-img"><img src="https://i.ibb.co/3Y4mmB7r/Whats-App-Image-2026-04-19-at-4-15-15-PM.jpg" alt="Awards"></div><div class="gallery-caption"><i class="fas fa-medal"></i> Prize Distribution</div></div>
+                <div class="gallery-card"><div class="gallery-img"><img src="https://i.ibb.co/mV99d5rS/Whats-App-Image-2026-04-19-at-4-15-31-PM.jpg" alt="Adventure Trip"></div><div class="gallery-caption"><i class="fas fa-hiking"></i> Students Adventure Trip</div></div>
             </div>
         </div>
     </section>
-</div>
-</body>
-</html>
+
     <!-- Fee Structure Section -->
     <section id="fee-structure" style="background: white; padding: 60px 0;">
         <div class="container">
@@ -965,7 +895,6 @@
                 <div class="fee-header">
                     <h3><i class="fas fa-file-invoice-dollar"></i> FEE STRUCTURE 2026-27</h3>
                     <p>Approved by P.T.A Executive Body on 18th March 2026</p>
-                    <p style="font-size:0.9rem; margin-top:5px;">Academic Year 2026-27 | For Regular Student (w.e.f April 2026) Monthly Fee</p>
                 </div>
                 <div class="fee-details">
                     <table class="fee-table">
@@ -987,7 +916,7 @@
     <section class="coaching" id="coaching" style="background: #f9f6ed;">
         <div class="container">
             <div class="section-header"><h2>Specialized Entrance Coaching</h2><p>JNV • Sainik School • Rajiv Navodaya</p></div>
-            <div class="fraternity-content" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
+            <div class="fraternity-content">
                 <div class="fraternity-item"><i class="fas fa-school fraternity-icon"></i><h3>Jawahar Navodaya</h3><p>Expert faculty, mock tests, mental ability focus. High success rate.</p></div>
                 <div class="fraternity-item"><i class="fas fa-university fraternity-icon"></i><h3>Sainik School</h3><p>Math, English, Intelligence + physical fitness & interview prep.</p></div>
                 <div class="fraternity-item"><i class="fas fa-award fraternity-icon"></i><h3>Rajiv Navodaya</h3><p>Personalized attention, weekly assessments & study material.</p></div>
@@ -1011,7 +940,7 @@
         </div>
     </section>
 
-    <!-- FOOTER (Leadership details completely removed, only essential info) -->
+    <!-- FOOTER (Leadership details removed) -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -1045,20 +974,18 @@
         </div>
     </footer>
 
-    <!-- Floating Icons: Phone & WhatsApp -->
+    <!-- Floating Icons -->
     <div class="floating-icons">
         <a href="tel:9412969392" class="float-icon phone" aria-label="Call"><i class="fas fa-phone-alt"></i></a>
         <a href="https://wa.me/919412969392?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20Sarswati%20Public%20School" class="float-icon whatsapp" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
     </div>
 
     <script>
-        // mobile menu toggle
         const mobileBtn = document.querySelector('.mobile-menu');
         const navUl = document.querySelector('nav ul');
         if(mobileBtn) {
             mobileBtn.addEventListener('click', () => navUl.classList.toggle('show'));
         }
-        // carousel logic
         let slideIndex = 0;
         const slides = document.querySelectorAll('.carousel-slide');
         const dots = document.querySelectorAll('.carousel-dot');
@@ -1074,7 +1001,6 @@
             dots.forEach((dot, i) => dot.addEventListener('click', () => showSlide(i)));
             setInterval(() => { showSlide(slideIndex+1); }, 5000);
         }
-        // smooth scroll & close mobile menu
         document.querySelectorAll('nav a, .logo').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const hash = this.getAttribute('href');
@@ -1096,4 +1022,3 @@
     </script>
 </body>
 </html>
-```
